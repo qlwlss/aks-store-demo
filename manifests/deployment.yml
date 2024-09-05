@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: qlwlssaksstoredemo 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: qlwlssaksstoredemo
+  template:
+    metadata:
+      labels:
+        app: qlwlssaksstoredemo 
+    spec:
+      containers:
+        - name: qlwlssaksstoredemo 
+          image: miinakstestacr.azurecr.io/qlwlssaksstoredemo
+          ports:
+          - containerPort: 5001
